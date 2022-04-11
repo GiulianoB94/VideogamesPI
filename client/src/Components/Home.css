@@ -1,0 +1,140 @@
+.Home {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+  background-image: linear-gradient(
+      to right,
+      rgb(12, 1, 20),
+      rgba(31, 11, 41, 0.644)
+    ),
+    url("/public/Images/1366_2000.jpg");
+}
+
+.header {
+  background-color: rgba(93, 42, 117, 0.932);
+  width: 100vw;
+  height: 15vh;
+  margin-bottom: 30px;
+  position: fixed;
+}
+
+.title {
+  font-family: "Squada One";
+  font-size: 50px;
+  font-weight: 200;
+  color: white;
+  float: left;
+  margin: 30px;
+}
+
+.filterCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 400px;
+  margin-bottom: -100px;
+}
+
+.selectBar {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 5px 10px;
+  border: 2px solid #dee1e2;
+  color: rgb(14, 14, 16);
+  background: #dee1e2;
+  height: 36px;
+  font-family: "Gruppo";
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.selectBar:hover {
+  border-color: #9147ff;
+  border: 5px solid #9147ff;
+}
+.selectBar:focus {
+  border-color: #dee1e2;
+  background: #dee1e2;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.ButtonBar {
+  padding: 5px 10px;
+  border: 3px solid #dee1e2;
+  color: rgb(14, 14, 16);
+  background: #9147ff;
+  display: block;
+  height: 36px;
+  font-family: "Gruppo";
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.ButtonBar:hover {
+  border-color: #9147ff;
+}
+
+.ButtonBar:focus {
+  border-color: #9147ff;
+  background: #42394e;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.cardContainer {
+  margin: auto;
+  /* margin-top: 0px; */
+  display: flex;
+  width: 1270px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+.linkToDet {
+  text-decoration: none;
+}
+
+.createVid {
+  width: 100px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: center;
+  text-decoration: none;
+  font-family: "Press Start 2P";
+  cursor: pointer;
+  outline: none;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: 500px;
+  border: 1px solid transparent;
+  letter-spacing: 2.5px;
+  min-width: 160px;
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 500;
+  text-align: center;
+  padding: 16px 14px 18px;
+  color: rgb(255, 255, 255);
+  background-color: #7c169e;
+}
+
+.createVid:hover {
+  background-color: #610d88;
+  transition-duration: 0.3s;
+}
+
+.footer {
+  background-color: rgba(93, 42, 117, 0.37);
+  width: 100vw;
+  height: 15vh;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
