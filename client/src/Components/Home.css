@@ -17,6 +17,7 @@
   height: 15vh;
   margin-bottom: 30px;
   position: fixed;
+  z-index: 1;
 }
 
 .title {
@@ -99,7 +100,7 @@
 }
 
 .createVid {
-  width: 100px;
+  width: 50px;
   height: 48px;
   display: flex;
   align-items: center;

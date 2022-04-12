@@ -102,7 +102,7 @@ export default function Home() {
       <div className="cardContainer">
         {currentVideogames?.map((el) => {
           return (
-            <Link className="linkTodet" to={"/Home/" + el.id}>
+            <Link className="linkTodet" to={"/videogame/" + el.id}>
               <Card
                 key={el.id}
                 name={el.name}

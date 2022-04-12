@@ -5,6 +5,7 @@
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 300px;
+  text-decoration: none;
 }
 
 .cardHeader img {
@@ -24,6 +25,7 @@
   font-size: 25px;
   justify-content: center;
   margin-top: 20px;
+  text-decoration: none;
 }
 
 .span {
@@ -40,9 +42,11 @@
 .span-tag {
   background-color: rgb(43, 6, 73);
   padding: 15px;
+  text-decoration: none;
 }
 
 .cardBody p {
   font-size: 13px;
   height: 200px;
+  text-decoration: none;
 }

@@ -14,7 +14,6 @@ function rootReducer(state = initialState, action) {
       };
     case "FILTER_BY_GENRE":
       const allVideogames = state.allVideogames;
-      console.log("ACA TA TODO WACHOOOOO", allVideogames);
       const videogamesGenre = allVideogames.map((e) => e.genres);
       console.log(videogamesGenre);
       const genreFiltered =
