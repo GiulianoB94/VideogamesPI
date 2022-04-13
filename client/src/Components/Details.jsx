@@ -16,29 +16,34 @@ export default function Details(props) {
 
   const myVideogame = useSelector((state) => state.detail);
   return (
-    <div className="mainContDet">
-      <header className="header">
-        <h1 className="title">HENRY GAMES</h1>
-      </header>
-      <div className="cardDetail">
-        <div className="cardLeft">
-          <img
-            className="imgDetail"
-            src={myVideogame.background_image}
-            alt="background"
-          />
-        </div>
-        <div className="cardRight">
-          <h1 className="titleDetail">{myVideogame.name}</h1>
-          <ul>
-            <li>Genre: {myVideogame.genres + " "}</li>
-            <li>Platforms: {myVideogame.platforms + " "}</li>
-            <li>Release Date : {myVideogame.released}</li>
-          </ul>
-          <p>{myVideogame.description}</p>
-          <p className="genreDetail">{myVideogame.ratings + " "}</p>
+    <div>
+      <div className="mainContDet">
+        <header className="header">
+          <h1 className="title">HENRY GAMES</h1>
+        </header>
+        <div className="cardDetail">
+          <div className="cardLeft">
+            <img
+              className="imgDetail"
+              src={myVideogame.background_image}
+              alt="background"
+            />
+          </div>
+          <div className="cardRight">
+            <h1 className="titleDetail">{myVideogame.name}</h1>
+            <ul>
+              <li>Genre: {myVideogame.genres + " "}</li>
+              <li>Platforms: {myVideogame.platforms + " "}</li>
+              <li>Release Date : {myVideogame.released}</li>
+            </ul>
+            <p>{myVideogame.description}</p>
+            <p className="genreDetail">{myVideogame.ratings + " "}</p>
+          </div>
         </div>
       </div>
+          <Link to="/home">
+            <button className="backButtonDet">Back</button>
+          </Link>
     </div>
   );
 }

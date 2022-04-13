@@ -58,6 +58,11 @@ export default function VideogameCreate() {
     console.log(input);
   }
 
+  function deleteSelected() {
+    let selected = document.getElementsByClassName('selected')
+
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log(input);
@@ -153,7 +158,12 @@ export default function VideogameCreate() {
                 <option value={genre.name}>{genre.name}</option>
               ))}
             </select>
-            <div className="selected">{input.genres.map((el) => el + " ")}</div>
+            <div className="selectedCont">
+              <div className="selected">
+                {input.genres.map((el) => el + " ")}
+              </div>
+            </div>
+
             <button
               onClick={(e) => handleSubmit(e)}
               type="submit"

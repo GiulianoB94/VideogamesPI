@@ -90,3 +90,18 @@
   font-weight: bolder;
   font-size: 150px;
 }
+
+.backButtonDet {
+  margin-top: 650px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  border-style: none;
+  cursor: pointer;
+  background-color: #9147ff;
+  font-family: "Gruppo";
+  font-size: 1.5rem;
+  font-weight: bolder;
+  height: 45px;
+  width: 85px;
+  justify-content: center;
+}

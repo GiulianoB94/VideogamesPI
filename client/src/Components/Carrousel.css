@@ -1,9 +1,0 @@
-.containerPic {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  padding: 200px;
-}
-.Pic {
-  background-image: url("/public/Images/Port.jpg");
-}
