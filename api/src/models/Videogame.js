@@ -24,26 +24,26 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
 
-      released: {
+      release: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      ratings: {
+      rating: {
         type: DataTypes.STRING,
         allowNull: true,
       },
       platforms: {
-        type: DataTypes.STRING,
+        type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: true,
       },
       background_image: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      // createdInDb: {
-      //   type: DataTypes.BOOLEAN,
-      //   allowNull: true,
-      // },
+      createdInDb: {
+        type: DataTypes.BOOLEAN,
+        allowNull: true,
+      },
     },
     { sequelize, timestamps: false }
   );

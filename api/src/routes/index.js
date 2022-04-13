@@ -104,7 +104,6 @@ router.get("/genres", async (req, res) => {
   );
   console.log(videogamesApi);
   const genres = await videogamesApi.data.results.map((e) => e.name);
-  console.log(genres);
   genres.map((p) => {
     Genres.findOrCreate({
       where: { name: p },
@@ -123,53 +122,62 @@ router.post("/videogame", async (req, res) => {
   let {
     name,
     description,
-    released,
-    ratings,
+    release,
+    rating,
     genres,
     platforms,
     background_image,
+    createdInDb,
   } = req.body;
+  try {
+    let newGame = await Videogame.create({
+      name,
+      description,
+      release,
+      rating,
+      platforms,
+      background_image,
+      createdInDb,
+    });
 
-  platforms = platforms.toString();
-  const addVgame = await Videogame.create({
-    name,
-    description,
-    released,
-    ratings,
-    platforms,
-    genres,
-    background_image,
-  });
+    genres.forEach(async (e) => {
+      let genresDb = await Genres.findAll({
+        where: { name: e.name },
+      });
+      newGame.addGenre(Object.values(genresDb));
+    });
 
-  const vgGenre = await Genres.findAll({
-    where: { name: genres },
-  });
-
-  addVgame.addGenre(vgGenre);
-  res.send("Videogame Created!");
-
-  // try {
-  //   let newGame = await Videogame.create({
-  //     name,
-  //     description,
-  //     released,
-  //     ratings,
-  //     platforms,
-  //     background_image,
-  //   });
-  //   genres.forEach(async (e) => {
-  //     let genresDb = await Genre.findAll;
-  //     {
-  //       where: {
-  //         name: e;
-  //       }
-  //     }
-  //     await newGame.addGenre(Object.values(genresDb));
-  //   });
-  //   res.status(200).send(newGame);
-  // } catch (error) {
-  //   console.log(error);
-  // }
+    res.status(200).send(newGame);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;
+
+// let {
+//   name,
+//   description,
+//   released,
+//   ratings,
+//   genres,
+//   platforms,
+//   background_image,
+// } = req.body;
+
+// platforms = platforms.toString();
+// const addVgame = await Videogame.create({
+//   name,
+//   description,
+//   released,
+//   ratings,
+//   platforms,
+//   genres,
+//   background_image,
+// });
+
+// const vgGenre = await Genres.findAll({
+//   where: { name: genres },
+// });
+// addVgame.addGenre(vgGenre);
+// res.send("Videogame Created!");

@@ -24,9 +24,12 @@ export default function VideogameCreate() {
   const [errors, setErrors] = useState({});
   const [input, setInput] = useState({
     name: "",
-    genres: [],
-    platforms: [],
+    description: "",
     image: "",
+    released: "",
+    ratings: "",
+    genres: [],
+    platforms: "",
   });
 
   useEffect(() => {
@@ -41,23 +44,10 @@ export default function VideogameCreate() {
     console.log(input);
   }
 
-  function handleSelectGenre(e) {
+  function handleSelect(e) {
     setInput({
       ...input,
       genres: [...input.genres, e.target.value],
-    });
-    setErrors(
-      validate({
-        ...input,
-        [e.target.name]: e.target.value,
-      })
-    );
-    console.log(input);
-  }
-  function handleSelectPlatforms(e) {
-    setInput({
-      ...input,
-      platforms: [...input.platforms, e.target.value],
     });
     setErrors(
       validate({
@@ -74,107 +64,110 @@ export default function VideogameCreate() {
     dispatch(postVideogame(input));
     alert("Videogame Created!");
     setInput({
-      name: "",
-      genres: "",
-      platforms: [],
-      image: "",
+      name: " ",
+      description: " ",
+      image: " ",
+      released: " ",
+      ratings: " ",
+      genres: [],
+      platforms: " ",
     });
     navigate("/home");
   }
 
   return (
-    <div className="containerPost">
-      <header className="header">
-        <h1 className="title">HENRY GAMES</h1>
-      </header>
+    <div>
+      <div className="containerPost">
+        <header className="header">
+          <h1 className="title">HENRY GAMES</h1>
+        </header>
 
-      <div className="mainscreen">
-        <div className="rightsidePost">
-          <form action="">
-            <h1 className="titlePost">Create Videogame</h1>
-            <label className="labelCardPost">Game title</label>
-            <input
-              type="text"
-              class="inputbox"
-              name="name"
-              required
-              value={input.name}
-              onChange={handleChange}
-            />
-            <label className="labelCardPost">Description</label>
-            <input
-              type="text"
-              class="inputbox"
-              name="Description"
-              id="card_number"
-              value={input.Description}
-              onChange={handleChange}
-              required
-            />
-            <label className="labelCardPost">Image</label>
-            <input
-              type="text"
-              class="inputbox"
-              name="Image"
-              id="card_number"
-              value={input.platforms}
-              onChange={handleChange}
-              required
-            />
-            <label className="labelCardPost">Release Date</label>
-            <input
-              type="text"
-              class="inputbox"
-              name="name"
-              required
-              value={input.Release}
-              onChange={handleChange}
-            />
-            <label className="labelCardPost">Ratings</label>
-            <input
-              type="text"
-              class="inputbox"
-              name="name"
-              required
-              value={input.Release}
-              onChange={handleChange}
-            />
-            <label className="labelCardPost">Select Genre</label>
-            <select
-              onChange={(e) => handleSelectGenre(e)}
-              class="inputbox"
-              name="card_type"
-              id="card_type"
-              required
-            >
-              {genres.map((genre) => (
-                <option value={genre.name}>{genre.name}</option>
-              ))}
-            </select>
-            <div>{input.genres.map((el) => el + ",")}</div>
-            <label className="labelCardPost">Select Platform</label>
-            <select
-              onChange={(e) => handleSelectPlatforms(e)}
-              class="inputbox"
-              name="card_type"
-              id="card_type"
-              required
-            >
-              {platforms}
-            </select>
-            <div>{input.platforms.map((el) => el + ",")}</div>
-            <button
-              onClick={(e) => handleSubmit(e)}
-              type="submit"
-              class="button"
-            >
-              Submit
-            </button>
-          </form>
+        <div className="mainscreen">
+          <div className="rightsidePost">
+            <form action="">
+              <h1 className="titlePost">Create Videogame</h1>
+              <label className="labelCardPost">Game title</label>
+              <input
+                type="text"
+                class="inputbox"
+                name="name"
+                value={input.name}
+                onChange={handleChange}
+                required
+              />
+              <label className="labelCardPost">Description</label>
+              <input
+                type="text"
+                class="inputbox"
+                name="description"
+                id="card_number"
+                value={input.description}
+                onChange={handleChange}
+                required
+              />
+              <label className="labelCardPost">Image</label>
+              <input
+                type="text"
+                class="inputbox"
+                name="image"
+                id="card_number"
+                value={input.image}
+                onChange={handleChange}
+                required
+              />
+              <label className="labelCardPost">Release Date</label>
+              <input
+                type="text"
+                class="inputbox"
+                name="released"
+                value={input.released}
+                onChange={handleChange}
+                required
+              />
+              <label className="labelCardPost">Ratings</label>
+              <input
+                type="text"
+                class="inputbox"
+                name="ratings"
+                value={input.ratings}
+                onChange={handleChange}
+                required
+              />
+              <label className="labelCardPost">Select Genre</label>
+              <select
+                onChange={(e) => handleSelect(e)}
+                class="inputbox"
+                name="card_type"
+                id="card_type"
+                required
+              >
+                {genres.map((genre) => (
+                  <option value={genre.name}>{genre.name}</option>
+                ))}
+              </select>
+              <div>{input.genres.map((el) => el + ",")}</div>
+              <label className="labelCardPost">Select Platform</label>
+              <input
+                type="text"
+                class="inputbox"
+                name="platforms"
+                value={input.platforms}
+                onChange={handleChange}
+                required
+              />
+              <button
+                onClick={(e) => handleSubmit(e)}
+                type="submit"
+                class="button"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <Link to="/home">
+            <button>Back</button>
+          </Link>
         </div>
-        <Link to="/home">
-          <button>Back</button>
-        </Link>
       </div>
     </div>
   );
