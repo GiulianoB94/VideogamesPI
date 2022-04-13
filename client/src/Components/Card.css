@@ -15,6 +15,7 @@
 }
 
 .cardBody {
+  height: 100px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -22,31 +23,19 @@
   text-transform: uppercase;
   font-family: "Squada One";
   color: rgb(119, 119, 119);
-  font-size: 25px;
+  font-size: 20px;
   justify-content: center;
   margin-top: 20px;
   text-decoration: none;
 }
 
 .span {
-  background: rgba(58, 11, 80, 0.952);
+  background: rgba(58, 11, 80, 0);
+  border-style: none;
   font-size: 25px;
   color: #fff;
-  padding: 1px 5px;
   text-transform: uppercase;
   font-family: "Squada One";
   cursor: pointer;
-  text-decoration: none;
-}
-
-.span-tag {
-  background-color: rgb(43, 6, 73);
-  padding: 15px;
-  text-decoration: none;
-}
-
-.cardBody p {
-  font-size: 13px;
-  height: 200px;
   text-decoration: none;
 }

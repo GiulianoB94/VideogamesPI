@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function getVideogames() {
   return async function (dispatch) {
-    var json = await axios.get("http://localhost:3001/videogames", {});
+    var json = await axios.get("http://localhost:3001/videogames");
 
     return dispatch({
       type: "GET_VIDEOGAMES",
@@ -15,6 +15,14 @@ export function filterVideogmeByGenre(payload) {
   console.log(payload);
   return {
     type: "FILTER_BY_GENRE",
+    payload,
+  };
+}
+
+export function filterByRating(payload) {
+  console.log(payload);
+  return {
+    type: "FILTER_BY_RATING",
     payload,
   };
 }

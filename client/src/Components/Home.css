@@ -36,19 +36,24 @@
   width: 100vw;
   height: 400px;
   margin-bottom: -100px;
+  border-radius: 15px;
 }
 
 .selectBar {
   font-size: 14px;
   line-height: 1.5;
   padding: 5px 10px;
-  border: 2px solid #dee1e2;
+  border: 5px solid #dee1e2;
   color: rgb(14, 14, 16);
   background: #dee1e2;
   height: 36px;
   font-family: "Gruppo";
   font-weight: bolder;
   font-size: 18px;
+  text-align: center;
+  margin: 8px;
+  border-radius: 17px;
+  overflow: hidden;
 }
 
 .selectBar:hover {
@@ -58,13 +63,18 @@
 .selectBar:focus {
   border-color: #dee1e2;
   background: #dee1e2;
-  font-size: 20px;
+}
+
+.selectBar option {
   font-weight: bolder;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .ButtonBar {
   padding: 5px 10px;
-  border: 3px solid #dee1e2;
+  border-style: none;
   color: rgb(14, 14, 16);
   background: #9147ff;
   display: block;
@@ -72,6 +82,7 @@
   font-family: "Gruppo";
   font-weight: 900;
   font-size: 20px;
+  border-radius: 15px;
 }
 
 .ButtonBar:hover {

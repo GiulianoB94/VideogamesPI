@@ -6,6 +6,7 @@ import {
   filterVideogmeByGenre,
   filterCreated,
   orderByName,
+  filterByRating,
 } from "../Actions";
 import Card from "./Card";
 import Pagination from "./Pagination";
@@ -41,6 +42,11 @@ export default function Home() {
   function handleGenre(e) {
     e.preventDefault();
     dispatch(filterVideogmeByGenre(e.target.value));
+  }
+
+  function handleRating(e) {
+    e.preventDefault();
+    dispatch(filterByRating(e.target.value));
   }
 
   function handleFilterCreated(e) {
@@ -84,6 +90,12 @@ export default function Home() {
           <option value="Arcade">Arcade</option>
           <option value="Fighting">Fighting</option>
           <option value="Card">Card</option>
+        </select>
+        <select className="selectBar" onChange={(e) => handleRating(e)}>
+          <option value="All">All</option>
+          <option value="exceptional">exceptional</option>
+          <option value="recommended">recommended</option>
+          <option value="meh">meh</option>
         </select>
         <select className="selectBar" onChange={(e) => handleFilterCreated(e)}>
           <option value="All">All</option>

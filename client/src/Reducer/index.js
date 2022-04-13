@@ -3,6 +3,7 @@ const initialState = {
   allVideogames: [],
   genres: [],
   detail: [],
+  ratings: [],
 };
 function rootReducer(state = initialState, action) {
   switch (action.type) {
@@ -25,6 +26,21 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         videogames: genreFiltered,
+      };
+
+    case "FILTER_BY_RATING":
+      const allVideogamesRate = state.allVideogames;
+      const vgRatings = allVideogamesRate.map((e) => e.ratings);
+      console.log(vgRatings);
+      const ratingFiltered =
+        action.payload === "All"
+          ? allVideogamesRate
+          : allVideogamesRate.filter(
+              (videogames) => videogames.ratings === action.payload
+            );
+      return {
+        ...state,
+        videogames: ratingFiltered,
       };
 
     case "FILTER_BY_CREATED":

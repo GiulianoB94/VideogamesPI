@@ -1,5 +1,5 @@
-
 .mainContDet {
+  overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -20,7 +20,7 @@
   margin: auto;
   left: 0;
   right: 0;
-  top: 40%;
+  top: 10%;
   bottom: 0;
   border-radius: 10px;
   box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
@@ -42,8 +42,8 @@
 }
 
 .cardRight {
-  width: 60%;
-  height: 700px;
+  width: 58%;
+  height: auto;
   float: left;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0 10px 10px 0;
@@ -71,12 +71,13 @@
   text-align: justify;
   font-family: "Gruppo";
   font-weight: bolder;
+  word-spacing: 3px;
 }
 
 .cardRight p {
   font-size: 15px;
   padding: 0 40px 0 40px;
-  letter-spacing: 1px;
+  word-spacing: 1px;
   margin: 10px 0 10px 0;
   line-height: 17px;
   text-align: justify;

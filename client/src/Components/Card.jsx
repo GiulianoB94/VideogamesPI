@@ -7,7 +7,7 @@ export default function Card({ id, name, genres, background_image }) {
       <div className="cardHeader">
         <img src={background_image} alt="img not found" />
         <button className="span">{name}</button>
-        <div className="cardBody">{genres + ""}</div>
+        <div className="cardBody">{genres + " "}</div>
       </div>
     </div>
   );
